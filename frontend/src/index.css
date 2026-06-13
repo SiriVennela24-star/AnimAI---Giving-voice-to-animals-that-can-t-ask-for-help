@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #07070A;
+    color: #F3F4F6;
+    font-family: 'Outfit', 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #07070A;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(138, 43, 226, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 0, 127, 0.5);
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(15, 10, 30, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(138, 43, 226, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-panel-hover:hover {
+  border-color: rgba(255, 0, 127, 0.35);
+  box-shadow: 0 0 25px rgba(138, 43, 226, 0.25), inset 0 0 12px rgba(255, 0, 127, 0.05);
+  transform: translateY(-2px);
+}
+
+/* Cyber Sanctuary Grid Overlay */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(138, 43, 226, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(138, 43, 226, 0.04) 1px, transparent 1px);
+}
+
+/* Pulsing Distress Glows */
+@keyframes neon-pulse-pink {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+    box-shadow: 0 0 0 0 rgba(255, 0, 127, 0.7);
+  }
+  70% {
+    transform: scale(1.1);
+    opacity: 0.4;
+    box-shadow: 0 0 0 15px rgba(255, 0, 127, 0);
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.8;
+    box-shadow: 0 0 0 0 rgba(255, 0, 127, 0);
+  }
+}
+
+.pulse-glow-pink {
+  animation: neon-pulse-pink 2s infinite;
+}
+
+/* Laser Scanner Line */
+@keyframes scan-y {
+  0% {
+    top: 0%;
+  }
+  50% {
+    top: 100%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+.laser-scanner-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #8A2BE2, #FF007F, #8A2BE2, transparent);
+  box-shadow: 0 0 10px #FF007F, 0 0 20px #8A2BE2;
+  animation: scan-y 4s ease-in-out infinite;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Leaflet Custom Overwrites for Dark Cyber Map */
+.leaflet-container {
+  background: #07070A !important;
+}
+
+.leaflet-tile {
+  filter: invert(1) hue-rotate(180deg) brightness(0.6) contrast(1.2) !important;
+}
+
+.leaflet-bar a {
+  background-color: rgba(15, 10, 30, 0.85) !important;
+  color: #fff !important;
+  border: 1px solid rgba(138, 43, 226, 0.3) !important;
+}
+
+.leaflet-bar a:hover {
+  background-color: rgba(255, 0, 127, 0.2) !important;
+  color: #FF007F !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: rgba(10, 8, 20, 0.95) !important;
+  border: 1px solid rgba(138, 43, 226, 0.4) !important;
+  color: #F3F4F6 !important;
+  backdrop-filter: blur(8px);
+  border-radius: 8px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+.leaflet-popup-tip {
+  background: rgba(10, 8, 20, 0.95) !important;
+  border-left: 1px solid rgba(138, 43, 226, 0.4) !important;
+  border-bottom: 1px solid rgba(138, 43, 226, 0.4) !important;
+}
+
+/* Sequential SVG Paw Print Animations */
+@keyframes paw-fade {
+  0%, 100% {
+    opacity: 0.15;
+    filter: drop-shadow(0 0 0px transparent);
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 8px #FF007F);
+  }
+}
+
+.paw-glow-step-1 { animation: paw-fade 2s infinite 0.1s; }
+.paw-glow-step-2 { animation: paw-fade 2s infinite 0.4s; }
+.paw-glow-step-3 { animation: paw-fade 2s infinite 0.7s; }
+.paw-glow-step-4 { animation: paw-fade 2s infinite 1.0s; }
+.paw-glow-step-5 { animation: paw-fade 2s infinite 1.3s; }
+
+/* Background Floating Paws */
+@keyframes float-slow {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-40px) rotate(15deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.animate-float-paw {
+  animation: float-slow var(--duration, 20s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Frequency Wave Simulator Animations */
+@keyframes frequency-wave-shift {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-15%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-wave-slow {
+  animation: frequency-wave-shift 12s ease-in-out infinite;
+}
+
+.animate-wave-medium {
+  animation: frequency-wave-shift 8s ease-in-out infinite alternate;
+}
+
+.animate-wave-fast {
+  animation: frequency-wave-shift 5s ease-in-out infinite alternate-reverse;
+}
+
+/* Leaflet Neon Glowing Marker Classes */
+.custom-neon-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.shadow-neon-magenta {
+  box-shadow: 0 0 15px #FF007F, inset 0 0 5px #FF007F;
+}
+
+.shadow-neon-violet {
+  box-shadow: 0 0 15px #8A2BE2, inset 0 0 5px #8A2BE2;
+}
+
+.shadow-neon-yellow {
+  box-shadow: 0 0 15px #F1C40F, inset 0 0 5px #F1C40F;
+}
+
