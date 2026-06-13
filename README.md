@@ -303,3 +303,32 @@ The platform enables:
 - Predictive rescue planning
 
 By transforming scattered reports into actionable intelligence, AnimAI creates a scalable and intelligent framework capable of saving thousands of animal lives through technology-driven intervention.
+
+# Local Setup Guide
+
+Follow this single, continuous sequence of terminal commands to clone, configure, and boot both the backend and frontend servers within the same terminal session using background workers.
+
+### Prerequisites
+Ensure you have **Node.js (v18+)**, **Python (3.10+)**, and **Pip** installed on your system.
+
+---
+
+### Run All Commands Continuously
+
+Copy the relevant script block for your operating system and paste it directly into a single open terminal.
+
+#### 🪟 For Windows (PowerShell)
+```powershell
+# 1. Setup Backend
+cd backend
+python -m venv venv
+.\venv\Scripts\activate
+pip install -r requirements.txt
+New-Item -Path .env -ItemType File -Value "MONGO_URI=your_mongodb_atlas_connection_string`nCLOUDINARY_CLOUD_NAME=your_cloudinary_name`nCLOUDINARY_API_KEY=your_cloudinary_key`nCLOUDINARY_API_SECRET=your_cloudinary_secret"
+Start-Process powershell -ArgumentList "-NoExit", "-Command", ".\venv\Scripts\activate; uvicorn main:app --reload"
+
+# 2. Setup Frontend
+cd ..\frontend
+npm install
+New-Item -Path .env -ItemType File -Value "VITE_API_URL=[http://127.0.0.1:8000](http://127.0.0.1:8000)"
+npm run dev
