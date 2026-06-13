@@ -49,6 +49,18 @@ The system then visualizes incidents on a live dashboard, generates severity hea
 - Uvicorn
 - Python
 
+
+### 📊 Project Dataset Specifications
+
+AnimAI utilizes a custom-compiled **Multimodal Telemetry Dataset** specifically aggregated and curated to evaluate street emergencies across multiple channels simultaneously:
+
+* **Visual Analytics Component:** * **Composition:** High-resolution image files and streaming video frames covering urban stray animal classes, focused heavily on dogs and cats.
+  * **Trauma Target Fields:** Curated samples featuring distinct lacerations, open street wounds, limbs showing structural mobility trauma, and facial muscle tension mapping. Used directly to evaluate the confidence scoring matrices of the **YOLO11** custom pipeline.
+
+* **Acoustic Signal Component:**
+  * **Composition:** High-fidelity `.mp3` and `.wav` digital audio waveforms sampled uniformly at 16kHz.
+  * **Vocalization Matrix:** Includes specific isolated channels of animal distress—such as high-pitch yelping, aggressive barking, canine crying, and feline screeching markers. Used directly to test the **Librosa** feature extraction layers against urban background interference (traffic noise, sirens, and pedestrian chatter).
+
 ## Artificial Intelligence
 
 ### Computer Vision
@@ -65,11 +77,12 @@ The system then visualizes incidents on a live dashboard, generates severity hea
 
 - Rule-Based NLP Classification
 
-## Database & Storage
+## Database and storage 
 
 - MongoDB Atlas
 - Motor (Async MongoDB Driver)
 - Cloudinary
+
 
 ## Mapping & Geolocation
 
@@ -332,3 +345,24 @@ cd ..\frontend
 npm install
 New-Item -Path .env -ItemType File -Value "VITE_API_URL=[http://127.0.0.1:8000](http://127.0.0.1:8000)"
 npm run dev
+
+
+# 👥 Team & Project Metadata
+
+---
+
+### 👤 Team Lead Details
+* **Name:** Siri Vennela
+* **Education:** 3rd year 6th semester, Methodist College
+
+---
+
+### 🎯 Strategic Theme
+* **Primary Track:** **AI for Social Impact**
+* **Mission Domain:** Urban Animal Welfare, Multimodal Triage Automation, and Geospatial Emergency Dispatch Networks.
+
+---
+
+### 🔢 Team Capacity
+* **Total Team Members:** 1 
+* **Team name:** EntangleX
