@@ -74,10 +74,6 @@ export default function Header({ currentPage, setCurrentPage }) {
       <div className="flex items-center space-x-3 font-mono text-[10px]">
         <div className="flex flex-col items-end">
           <span className="text-white opacity-85">SYS_TRIAGE_PORT</span>
-          <span className={`flex items-center gap-1 ${dbConnected ? 'text-cyber-cyan' : 'text-cyber-magenta'}`}>
-            <span className={`w-1.5 h-1.5 rounded-full ${dbConnected ? 'bg-cyber-cyan animate-pulse' : 'bg-cyber-magenta'}`} />
-            {dbStatus.toUpperCase()}
-          </span>
         </div>
         <div className="p-1.5 bg-black/40 border border-cyber-violet/30 rounded-lg text-cyber-violet">
           <Radio className="w-4 h-4" />

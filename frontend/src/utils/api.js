@@ -29,8 +29,8 @@ export const submitRescueTriage = async (audioBlob, mediaBlob, onProgress) => {
   }
 
   // Get dynamic geospatial index
-  let latitude = 37.7749;
-  let longitude = -122.4194;
+  let latitude = 17.3850;
+  let longitude = 78.4867;
   
   try {
     const position = await new Promise((resolve, reject) => {

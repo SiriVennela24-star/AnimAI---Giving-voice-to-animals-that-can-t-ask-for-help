@@ -20,10 +20,9 @@ router = APIRouter(prefix="/api/v1/triage", tags=["Triage"])
 
 # Metropolitan clusters for fallback coordinates (with name and coordinates [lng, lat])
 METRO_SECTORS = [
-    {"name": "Mumbai Sector A", "coords": [72.8777, 19.0760]},       # Mumbai
-    {"name": "Delhi Sector B", "coords": [77.2090, 28.6139]},        # Delhi
-    {"name": "Bengaluru Sector C", "coords": [77.5946, 12.9716]},     # Bengaluru
-    {"name": "Kolkata Sector D", "coords": [88.3639, 22.5726]}        # Kolkata
+    {"name": "Hyderabad Sector A", "coords": [78.4867, 17.3850]},     # Hyderabad
+    {"name": "Mumbai Sector B", "coords": [72.8777, 19.0760]},        # Mumbai
+    {"name": "Pune Sector C", "coords": [73.8567, 18.5204]}            # Pune
 ]
 
 class CommunityReportRequest(BaseModel):

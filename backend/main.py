@@ -36,7 +36,7 @@ async def lifespan(app: FastAPI):
                     "_id": "seed-1",
                     "incident_id": "seed-1",
                     "timestamp": (datetime.now(timezone.utc) - timedelta(minutes=15)).isoformat(),
-                    "location": [-122.4194, 37.7749],  # San Francisco
+                    "location": [78.4867, 17.3850],  # Hyderabad
                     "media_assets": {
                         "cloudinary_audio_url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
                         "cloudinary_image_url": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&q=80&w=600"
@@ -56,7 +56,7 @@ async def lifespan(app: FastAPI):
                     "_id": "seed-2",
                     "incident_id": "seed-2",
                     "timestamp": (datetime.now(timezone.utc) - timedelta(hours=2)).isoformat(),
-                    "location": [-74.0060, 40.7128],  # New York
+                    "location": [72.8777, 19.0760],  # Mumbai
                     "media_assets": {
                         "cloudinary_audio_url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
                         "cloudinary_image_url": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=600"
@@ -75,7 +75,7 @@ async def lifespan(app: FastAPI):
                     "_id": "seed-3",
                     "incident_id": "seed-3",
                     "timestamp": (datetime.now(timezone.utc) - timedelta(days=1)).isoformat(),
-                    "location": [-0.1278, 51.5074],  # London
+                    "location": [73.8567, 18.5204],  # Pune
                     "media_assets": {
                         "cloudinary_audio_url": None,
                         "cloudinary_image_url": "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&q=80&w=600"
