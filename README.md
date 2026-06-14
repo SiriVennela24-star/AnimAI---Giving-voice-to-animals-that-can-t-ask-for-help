@@ -346,6 +346,12 @@ npm install
 New-Item -Path .env -ItemType File -Value "VITE_API_URL=[http://127.0.0.1:8000](http://127.0.0.1:8000)"
 npm run dev
 
+```
+
+
+
+
+
 
 # 👥 Team & Project Metadata
 
